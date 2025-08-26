@@ -1,5 +1,189 @@
-# Vue 3 + Vite
+# 农产品溯源系统 - 技术栈文档
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 项目概述
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+这是一个基于区块链技术的农产品溯源系统，采用前后端分离架构，提供完整的农产品从生产到销售的全程追溯功能。
+
+## 技术架构
+
+### 前端技术栈 (Frontend)
+
+#### 核心框架
+
+- **Vue.js 3.4.0** - 渐进式 JavaScript 框架，采用 Composition API
+- **Vue Router 4.0.0** - 官方路由管理器
+- **Pinia 3.0.0** - Vue 官方状态管理库
+
+#### 构建工具
+
+- **Vite 4.0.0** - 下一代前端构建工具，提供极速的开发体验
+- **ESLint 8.0.0** - 代码质量检查工具
+- **PostCSS 8.4.32** - CSS 后处理器
+- **Autoprefixer 10.4.16** - 自动添加 CSS 前缀
+
+#### UI 框架与样式
+
+- **Tailwind CSS 3.4.0** - 实用优先的 CSS 框架
+- **@heroicons/vue 2.0.18** - Vue 3 图标组件库
+
+#### 数据可视化
+
+- **ECharts 5.6.0** - 强大的数据可视化图表库
+- **vue-echarts 7.0.3** - Vue 3 的 ECharts 封装组件
+
+#### HTTP 客户端
+
+- **Axios 1.11.0** - 基于 Promise 的 HTTP 客户端
+
+#### 区块链集成
+
+- **Ethers.js 6.15.0** - 以太坊钱包实现和工具库
+
+### 后端技术栈 (Backend)
+
+#### 核心框架
+
+- **Node.js** - JavaScript 运行时环境
+- **Express.js 4.21.2** - 轻量级 Web 应用框架
+
+#### 数据库
+
+- **MySQL** - 关系型数据库
+- **mysql2 3.14.2** - MySQL 的 Node.js 驱动
+
+#### 身份认证与安全
+
+- **bcryptjs 2.4.3** - 密码哈希加密
+- **jsonwebtoken 9.0.2** - JWT 令牌生成和验证
+
+#### 文件处理
+
+- **multer 1.4.5-lts.1** - 文件上传中间件
+
+#### 工具库
+
+- **moment 2.30.1** - 日期时间处理库
+- **cors 2.8.5** - 跨域资源共享中间件
+- **dotenv 16.6.1** - 环境变量管理
+
+#### 开发工具
+
+- **nodemon 3.1.10** - 开发环境自动重启工具
+
+## 项目结构
+
+```
+chain/
+├── src/                    # 前端源代码
+│   ├── components/        # Vue组件
+│   ├── views/            # 页面视图
+│   ├── router/           # 路由配置
+│   ├── store/            # Pinia状态管理
+│   ├── api/              # API接口
+│   └── utils/            # 工具函数
+├── server/               # 后端服务
+│   ├── database/         # 数据库脚本
+│   └── scripts/          # 工具脚本
+├── public/               # 静态资源
+└── dist/                 # 构建输出目录
+```
+
+## 开发环境配置
+
+### 前端开发
+
+```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 构建生产版本
+npm run build
+
+# 代码检查
+npm run lint
+```
+
+### 后端开发
+
+```bash
+# 进入后端目录
+cd server
+
+# 安装依赖
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 初始化数据库
+npm run init-db
+```
+
+## 环境要求
+
+- **Node.js**: >= 16.0.0
+- **npm**: >= 8.0.0
+- **MySQL**: >= 8.0.0
+- **现代浏览器**: 支持 ES6+的现代浏览器
+
+## 端口配置
+
+- **前端开发服务器**: 3000
+- **后端 API 服务器**: 8080
+- **数据库**: 3306 (默认)
+
+## 特性功能
+
+### 核心功能
+
+- 农产品信息管理
+- 溯源链查询
+- 区块链数据验证
+- 用户权限管理
+- 数据统计分析
+
+### 技术特性
+
+- 响应式设计
+- 组件化架构
+- 状态管理
+- 路由管理
+- API 接口封装
+- 错误处理
+- 加载状态管理
+
+## 部署说明
+
+### 前端部署
+
+1. 执行 `npm run build` 生成生产版本
+2. 将 `dist` 目录部署到 Web 服务器
+
+### 后端部署
+
+1. 配置环境变量
+2. 启动 Node.js 服务
+3. 配置反向代理
+
+## 开发规范
+
+- 使用 ESLint 进行代码规范检查
+- 遵循 Vue 3 Composition API 最佳实践
+- 采用 Tailwind CSS 进行样式开发
+- 组件命名采用 PascalCase
+- 文件命名采用 kebab-case
+
+## 技术亮点
+
+1. **现代化技术栈**: 采用 Vue 3 + Vite + Tailwind CSS 的最新组合
+2. **区块链集成**: 集成以太坊区块链技术，确保数据不可篡改
+3. **响应式设计**: 支持多设备访问的现代化 UI 设计
+4. **数据可视化**: 集成 ECharts 提供丰富的数据展示
+5. **模块化架构**: 清晰的代码组织结构，便于维护和扩展
+
+## 联系方式
+
+如有技术问题或建议，请联系开发团队。
